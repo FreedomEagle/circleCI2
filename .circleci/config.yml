@@ -57,6 +57,7 @@ jobs:
             ls -a
       - run:
           name: run cypress dev
+          browser: chrome
           command: |
             ls          
             cd cypress/e2e
