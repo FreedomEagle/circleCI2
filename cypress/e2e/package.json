@@ -11,7 +11,7 @@
     "test:dev": "stage=dev npm run test",
     "test:qa": "stage=qa npm run test",
     "test:prod": "CYPRESS_ENV=production stage=prod npm run test",
-    "test": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
+    "testCypress": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
     "test:debug:dev": "stage=dev npm run test:debug",
     "test:debug:qa": "stage=qa npm run test:debug",
     "test:debug:prod": "CYPRESS_ENV=production stage=prod npm run test:debug",
