@@ -57,9 +57,10 @@ jobs:
             ls -a
       - run:
           name: run cypress dev
+          browser: chrome
           command: |
             ls          
             cd cypress/e2e
             npm install cypress
             ls
-            npm run test
+            npm run testCypress
