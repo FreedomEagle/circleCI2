@@ -62,4 +62,4 @@ jobs:
             cd cypress/e2e
             npm install cypress
             ls
-            npm run cypress:open
+            npm run test
