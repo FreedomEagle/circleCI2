@@ -1,4 +1,4 @@
 {
-  "baseUrl": "http://localhost:3000/",
+  "baseUrl": "http://share112.com",
   "e2eDatabaseJobApi": "https://some-server-localhost.com/e2e-api/"
 }
