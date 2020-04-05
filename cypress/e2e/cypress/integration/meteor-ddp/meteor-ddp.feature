@@ -1,5 +1,4 @@
 Feature: Testing DDP Rate Limiter on a Meteor App
- 
 
   #If any normal user logs in, he/she gets limited to one more log in for the next six seconds. 
   #The six seconds cover the time after the user logs in to once the user logs out, logs in, logs out, 
