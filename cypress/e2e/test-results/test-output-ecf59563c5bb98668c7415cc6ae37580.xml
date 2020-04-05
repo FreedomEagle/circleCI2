@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="21.377" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-04-05T20:36:39" tests="0" file="cypress/integration/meteor-ddp/meteor-ddp.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Testing DDP Rate Limiter on a Meteor App" timestamp="2020-04-05T20:36:39" tests="1" failures="0" time="21.377">
+    <testcase name="Testing DDP Rate Limiter on a Meteor App Super User Logs In Past The Limit After Normal User User Logs In" time="21.377" classname="Super User Logs In Past The Limit After Normal User User Logs In">
+    </testcase>
+  </testsuite>
+</testsuites>
