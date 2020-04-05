@@ -1,0 +1,4 @@
+{
+  "baseUrl": "http://localhost:3000/",
+  "e2eDatabaseJobApi": "https://some-server-localhost.com/e2e-api/"
+}
