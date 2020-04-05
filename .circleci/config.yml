@@ -52,6 +52,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+            - ~/.meteor
           command: |
             cd ~/.cache
             ls -a
@@ -63,4 +64,4 @@ jobs:
             cd cypress/e2e
             npm install cypress
             ls
-            npm run test:debug
+            npm run test:debug:dev
