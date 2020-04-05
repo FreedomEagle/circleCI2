@@ -1,0 +1,64 @@
+version: 3.1
+orbs:
+  cypress: cypress-io/cypress@1.19.1
+paths:
+  - cache/Cypress
+script:
+- 'export CYPRESS_CACHE_FOLDER=../../cache/Cypress'
+- 'npm ci'
+- 'export CYPRESS_CACHE_FOLDER=cache/Cypress'
+- 'npm run ci'
+dependencies:
+  override:
+    - npm ci
+jobs:
+  build:
+    docker:
+      - image: "cypress/included:3.8.1"
+    yarn: true
+    install-command: yarn install --frozen-lockfile
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - cache-{{ checksum "package.json" }}
+      - run:
+          name: Install Meteor
+          command: |
+            curl https://install.meteor.com/ | sh 
+      - run:
+          name: Dependencies2
+          command: |
+            npm ci       
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: Code has arrived
+          command: |
+            ls -al
+            echo '^^^this should look farmiliar^^'
+      - run:
+          name: start meteor server
+          command: |
+            npm run start
+          background: true
+      # save npm dependencies and Cypress binary for future runs
+      - save_cache:
+          key: cache-{{ checksum "package.json" }}
+          #CYPRESS_CACHE_FOLDER=cache/Cypress
+          paths:
+            - ~/.npm
+            - ~/.cache
+          command: |
+            cd ~/.cache
+            ls -a
+      - run:
+          name: run cypress dev
+          command: |
+            ls          
+            cd cypress/e2e
+            npm install cypress
+            npm run cypress:open
