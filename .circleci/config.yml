@@ -21,7 +21,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - cache-{{ checksum "package2.json" }}
+            - cache-{{ checksum "package.json" }}
       - run:
           name: Install Meteor
           command: |
@@ -47,7 +47,7 @@ jobs:
           background: true
       # save npm dependencies and Cypress binary for future runs
       - save_cache:
-          key: cache-{{ checksum "package2.json" }}
+          key: cache-{{ checksum "package.json" }}
           #CYPRESS_CACHE_FOLDER=cache/Cypress
           paths:
             - ~/.npm
