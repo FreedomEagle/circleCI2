@@ -1,4 +1,4 @@
-InstallingInstallingversion: 3.1
+version: 3.1
 orbs:
   cypress: cypress-io/cypress@1.19.1
 paths:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:InstallingInstallingInstalling
+          keys:
             - cache-{{ checksum "package.json" }}
       - run:
           name: Install Meteor
