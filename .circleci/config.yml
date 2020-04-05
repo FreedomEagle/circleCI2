@@ -63,4 +63,4 @@ jobs:
             cd cypress/e2e
             npm install cypress
             ls
-            npm run testCypress
+            npm run test:debug
