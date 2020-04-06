@@ -53,6 +53,7 @@ jobs:
             - ~/.npm
             - ~/.cache
             - ~/.meteor
+            - ~/cache/cypress
           command: |
             cd ~/.cache
             ls -a
