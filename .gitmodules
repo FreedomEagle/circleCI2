@@ -1,0 +1,3 @@
+[submodule "cypress/e2e/environmentSubmodule"]
+	path = cypress/e2e/environmentSubmodule
+	url = https://github.com/FreedomEagle/environmentSubmodule.git
