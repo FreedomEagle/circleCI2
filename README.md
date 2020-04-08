@@ -1,19 +1,19 @@
-# Developing E2E Test for Circle CI Implementation
+# E2E Test for Circle CI Implementation
 
-End-to-end testing suite for Share911 service. Relies on Share911/test-scripts repo. 
+End-to-end testing suite for Share911 service.  
 Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor app
 
-# To run this repository on CircleCI
+## To run this repository on CircleCI
 - Clone the repository
 - Delete the exisiting .git folder
 - Push the entire repository except the .circleci folder to your own repo in Github
 - Sign into Circle CI and follow the project with the repo
 - When asked to input config.yml, copy and paste the contents of .circleCi/config.yml
 
-# Cypress Installation
+## Cypress Installation
 ### Git Clone the Repo 
 git clone <address>
-This already has cypress installed. 
+This already has cypress installed.   
 Otherwise install cypress through command: npm install cypress
 ### Install Dependencies
 - npm install 
@@ -22,9 +22,9 @@ We keep a seperate gherkin feature folder and a repository that ensures only the
 e2e/gherkin-features
 
 - git submodule init
+ #This syncs the gherkin-features with the tests inside the cypress folder (optional)
 - git submodule update
 - npm run test:pull-features   
- #This syncs the gherkin-features with the tests inside the cypress folder (optional)
 This will delete any Gherkin Feature files within the cypress/integration folder.  
 This will not delete the cypress javascript file located within the cypress/integration/test.  
 This will make sure only the tests within the Gherkin-Features will show up during the test run.  
