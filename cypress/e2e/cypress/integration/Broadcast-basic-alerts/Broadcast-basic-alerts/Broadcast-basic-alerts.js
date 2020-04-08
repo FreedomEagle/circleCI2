@@ -18,13 +18,30 @@ Given('{string} logs in', email => {
   Share112.loginInitial(email, password)
 })
 
+Given('{string} logs into {string} channel', (email, channel) => {
+  const userList = Cypress.env('users')
+  const user = userList[email]
+  const password = user['password']
+  Share112.loginInitial(email, password)
+  cy.contains(channel).click({force:true})
+})
+
+
 Given('{string} logs back in', email => {
   const userList = Cypress.env('users')
   const user = userList[email]
   const password = user['password']
-
   Share112.logBackIn(email, password)
 })
+
+Given('{string} logs back into {string} channel', (email, channel) => {
+  const userList = Cypress.env('users')
+  const user = userList[email]
+  const password = user['password']
+  Share112.logBackIn(email, password)
+  cy.contains(channel).click({force:true})
+})
+
 
 And('invite(s) {string} and inputs basic info', (email) => {
   const userList = Cypress.env('users')
@@ -61,7 +78,7 @@ And('{string}, {string}, and {string} should receive a {string} alert message on
   const pw2 = user2['password']
   const user3 = userList[email3]
   const pw3 = user3['password']
-  cy.wait(500)
+  cy.wait(2000)
   Share112.loginFirstTime(email1, pw1)
   cy.checkAlert(channel, alertType)
   Share112.logOut()
@@ -72,7 +89,7 @@ And('{string}, {string}, and {string} should receive a {string} alert message on
   cy.wait(1500)
 })
 
-And('(he)(she)(I)( also) receive(s) a {string} alert message on (their)(his)(her) app for {string}', (alertType, channel) => {
+And('(he)(she)(I) (also) receive(s) a {string} alert message on (their)(his)(her) app for {string}', (alertType, channel) => {
   cy.checkAlert(channel, alertType)
 })
 
@@ -128,7 +145,7 @@ When('the {string} logs in through {string} with the password {string}', (name, 
   Share112.checkName(name)
 })
 And('broadcasts a {string} alert for the {string} channel', (alert, channel) => {
-  Share112.broadCastAlert(channel, alert)
+  Share112.broadcastAlert(channel, alert)
 })
 Then('everyone in the channel {string} should have received a text', (channel) => {
   Share112.checkSMSandText()

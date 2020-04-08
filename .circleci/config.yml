@@ -64,5 +64,6 @@ jobs:
             ls          
             cd cypress/e2e
             npm install cypress
+            npm i -D cypress-wait-until
             ls
             npm run test:debug:dev

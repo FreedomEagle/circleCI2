@@ -153,7 +153,7 @@ class Share112 {
     cy.server({ enable: false })
   }
 
-  static broadCastAlert (channel, alertType) {
+  static broadcastAlert (channel, alertType) {
     cy.contains(channel).click()
     cy.contains('Broadcast').click({ force: true })
     cy.contains(alertType).click()

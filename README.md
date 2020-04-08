@@ -3,9 +3,9 @@
 
 ## Background
 
-Meteor has built in methods which limit the frequency of method and subscription calls. The built in functions are there to protetect the site framework from attacks as common as simple password-checking script.
+Meteor has built in methods which limit the frequency of method and subscription calls. The built in functions are there to protetect the site framework at the websocket level from attacks as common as simple password-checking script.
 
-The default rule which limit login attempts, new user creation, and password resetsto 5 attempts every 10 seconds per connection, 
+The default rule which limit login attempts, new user creation, and password resets to 5 attempts every 10 seconds per connection, 
 can be removed and replaced. During an automated testing which includes multiple log ins or user creations, this function can 'freeze' the test or return the test as fail.
 
 To explore and solve this issue, we create a simple meteor app with a cypressTest and test the DDPRateLimiter functions with the goal of allowing certain users to break the default limit for testing purposes while the rule remains intact for other users and connections.
