@@ -8,7 +8,13 @@ Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor a
 - Delete the exisiting .git folder
 - Push the entire repository except the .circleci folder to your own repo in Github
 - Sign into Circle CI and follow the project with the repo
-- When asked to input config.yml, copy and paste the contents of .circleCi/config.yml
+- When asked to input config.yml, copy and paste the contents of .circleCi/config.yml,
+DO Not press start building.
+- Delete the existing .circleCi folder in your repository
+Now press start building.
+- You will have a pull request on your Github repository. Merge the .circleCi-project-setup branch.
+- git pull the new .circleCi folder into your repo.
+- At this point, circleCI should be running the cypress tests on its app.
 
 ## Cypress Installation
 ### Git Clone the Repo 
@@ -17,23 +23,6 @@ This already has cypress installed.
 Otherwise install cypress through command: npm install cypress
 ### Install Dependencies
 - npm install 
-### Installing/Updating From Submodule
-We keep a seperate gherkin feature folder and a repository that ensures only these tests are ran during testing.
-e2e/gherkin-features
-
-- git submodule init
- #This syncs the gherkin-features with the tests inside the cypress folder (optional)
-- git submodule update
-- npm run test:pull-features   
-This will delete any Gherkin Feature files within the cypress/integration folder.  
-This will not delete the cypress javascript file located within the cypress/integration/test.  
-This will make sure only the tests within the Gherkin-Features will show up during the test run.  
-
-
-Use your own submodule repo doing:
-- git submodule add (YOUR_REPO_URL) gherkin-features
-- git add --all
-- git commit -m "Change repo url"
 
 # Run Tests Through any of These Modes.
 
@@ -109,7 +98,7 @@ export default generalFunctions
 import generalFunctions ./../../pages/general.js
   generalFunction.logOut()
 ``` 
-Environment Variable  
+### Environment Variable  
 We have adopted security measures by storing our log in infos and other private object properties in a file called cypress.env.json which does not get uploaded.  
 A file with this name in the parent folder of cypress allows Cypress program to use any objects stored in the file as environmental variables.  
 https://docs.cypress.io/guides/guides/environment-variables.html#Option-2-cypress-env-json  
@@ -131,3 +120,21 @@ user_Password = users[email][password]
     }
   }
 ```
+### Installing/Updating From Submodule (Optional)
+We keep a seperate gherkin feature folder and a repository that ensures only these tests are ran during testing.
+e2e/gherkin-features
+
+- git submodule init
+ #This syncs the gherkin-features with the tests inside the cypress folder (optional)
+- git submodule update
+- npm run test:pull-features   
+This will delete any Gherkin Feature files within the cypress/integration folder.  
+This will not delete the cypress javascript file located within the cypress/integration/test.  
+This will make sure only the tests within the Gherkin-Features will show up during the test run.  
+
+
+Use your own submodule repo doing:
+- git submodule add (YOUR_REPO_URL) gherkin-features
+- git add --all
+- git commit -m "Change repo url"
+
