@@ -67,3 +67,5 @@ jobs:
             npm i -D cypress-wait-until
             ls
             npm run test:debug:dev
+      - store_test_results:
+          path: test-results
