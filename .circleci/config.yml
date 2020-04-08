@@ -65,6 +65,7 @@ jobs:
             cd cypress/e2e
             npm install cypress
             npm i -D cypress-wait-until
+            npm install @types/lodash@4.14.50 --save 
             ls
             npm run test:debug:dev
       - store_test_results:
