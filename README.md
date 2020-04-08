@@ -1,11 +1,19 @@
-# e2e
+# Developing E2E Test for Circle CI Implementation
 
 End-to-end testing suite for Share911 service. Relies on Share911/test-scripts repo. 
 Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor app
 
-# Installation
+# To run this repository on CircleCI
+- Clone the repository
+- Push the entire repository except the .circleci folder to your own repo
+- Sign into Circle CI and follow the project with the repo
+- When asked to input config.yml, copy and paste the contents of .circleCi/config.yml
+
+# Cypress Installation
 ### Git Clone the Repo 
 git clone <address>
+This already has cypress installed. 
+Otherwise install cypress through command: npm install cypress
 ### Install Dependencies
 - npm install 
 ### Installing/Updating From Submodule
