@@ -5,7 +5,8 @@ Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor a
 
 # To run this repository on CircleCI
 - Clone the repository
-- Push the entire repository except the .circleci folder to your own repo
+- Delete the exisiting .git folder
+- Push the entire repository except the .circleci folder to your own repo in Github
 - Sign into Circle CI and follow the project with the repo
 - When asked to input config.yml, copy and paste the contents of .circleCi/config.yml
 
