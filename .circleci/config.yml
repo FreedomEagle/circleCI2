@@ -43,7 +43,7 @@ jobs:
       - run:
           name: start meteor server
           command: |
-            npm run start
+            npm run meteor
           background: true
       # save npm dependencies and Cypress binary for future runs
       - save_cache:

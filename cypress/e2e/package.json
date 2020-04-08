@@ -12,8 +12,8 @@
     "test:qa": "stage=qa npm run test",
     "test:prod": "CYPRESS_ENV=production stage=prod npm run test",
     "testCypress": "cypress run --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
-    "test:debug:dev": "stage=dev npm run test:debug",
     "test:debug:qa": "stage=qa npm run test:debug",
+    "test:debug:dev": "stage=dev npm run test:debug",
     "test:debug:prod": "CYPRESS_ENV=production stage=prod npm run test:debug",
     "test:debug": "cypress run --browser chrome --env TAGS='@e2e-test' --spec 'cypress/integration/**/*.feature'",
     "test:pull-features": "git submodule update --remote gherkin-features && cp -rf gherkin-features/* cypress/integration && node ./scripts/remove-old-features.js"
