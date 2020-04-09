@@ -27,7 +27,10 @@ jobs:
           command: |
             ls -a
             cd ~/.meteor
-            if[  ~/.meteor]
+            ls
+            cd ..
+            cd /root
+            if[  /root/.meteor]
             then 
                 echo "Cached Meteor bin found, restoring it"
                 sudo cp ~/.meteor/meteor 
