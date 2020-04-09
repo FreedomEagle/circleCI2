@@ -25,16 +25,19 @@ jobs:
       - run:
           name: Install Meteor
           command: |
-            curl https://install.meteor.com/ | sh 
+            ls -a
+            if[~/.meteor]
+            then 
+                echo "Cached Meteor bin found, restoring it"
+                sudo cp ~/.meteor/meteor 
+            else
+                echo "Cached bin not found, installing meteor"
+                curl https://install.meteor.com/ | sh
+                meteor npm install --save bcrypt 
       - run:
           name: Dependencies2
           command: |
             npm ci       
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
       - run:
           name: Code has arrived
           command: |
