@@ -8,19 +8,18 @@ Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor a
 - Delete the exisiting .git folder
 - Push the entire repository except the .circleci folder to your own repo in Github
 - Sign into Circle CI and follow the project with the repo
-- When asked to input config.yml, copy and paste the contents of .circleCi/config.yml,
-DO Not press start building.
-- Delete the existing .circleCi folder in your repository
-Now press start building.
+- When asked to input config.yml, copy and paste the contents of .circleCi/config.yml. Do NOT press start building.
+- Delete the existing .circleCi folder in your local folder. Press start building on circle ci.
 - You will have a pull request on your Github repository. Merge the .circleCi-project-setup branch.
-- git pull the new .circleCi folder into your repo.
+- git pull the new .circleCi folder into your local repo.
 - At this point, circleCI should be running the cypress tests on its app.
 
 ## Cypress Installation
+
 ### Git Clone the Repo 
 git clone <address>
-This already has cypress installed.   
-Otherwise install cypress through command: npm install cypress
+This already has cypress installed on it.   
+If you are building cypress onto your project, simply call command: npm install cypress
 ### Install Dependencies
 - npm install 
 
@@ -30,17 +29,19 @@ These modes are configurable in /e2e/cypress/config/
 
 -npm run cypress:open:qa
 -npm run cypress:open:prod  
--npm run cypress:open:local  
+-npm run cypress:open:dev  
 -npm run test:prod  
--npm run test:local  
+-npm run test:local 
+
+ Check package.json for more.  
 
 # Writing Tests
 
 The tests are written in Gherkin Syntax first   
 We recommend writing concise statements that can be reused in other scenarios.  
 The statements outta reflect specific action that will result in a specific state to ensure accurate testing.  
-Gradually building a collection of vocabulary and phrase that can be reused along with its javascript counter part  
-will optimize the time building tests. 
+Gradually building a Gherkin collection of vocabulary and phrases that can be reused along with its javascript counter part  
+will improve the time writing new tests. 
 
 ```ruby
 # e2e/cypress/integration/test1/test1.feature
@@ -52,7 +53,7 @@ Scenario: 'email1@email1.com' logs in and logs out multiple times
     When 'email1@email1.com' logs in and logs out 3 times 
     Then alert message should pop up
 ```
-The javascript file for the gherkin file exist under the same named folder 
+The cypress javascript file for the gherkin file exist under the same named folder 
 
 ```javascript
 // e2e/cypress/integration/test1/test1/test1.js
@@ -105,7 +106,7 @@ https://docs.cypress.io/guides/guides/environment-variables.html#Option-2-cypres
 
 ```javascript
 // e2e/cypress/integration/test1/test1.feature
-Given({string} logs in), (email){
+Given('{string} logs in)', (email){
 const users = Cypress.env('users')
 user_Password = users[email][password]
 }

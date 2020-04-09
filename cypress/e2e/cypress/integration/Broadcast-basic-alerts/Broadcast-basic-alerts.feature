@@ -1,5 +1,4 @@
 Feature: Broadcast basic alerts
-  @e2e-test
 # Each channel has a response agency                                  
 # A channel can exist within a channel group or groups
 # Multiple channels can belong to a channel group
