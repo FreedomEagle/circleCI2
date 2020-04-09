@@ -26,12 +26,8 @@ jobs:
           name: Install Meteor
           command: |
             ls -a
-            cd ~/.meteor
-            ls
-            cd ..
-            cd /root
-            if[  /root/.meteor]
-            then 
+            if[ /.meteor]
+              then 
                 echo "Cached Meteor bin found, restoring it"
                 sudo cp ~/.meteor/meteor 
             else
