@@ -21,6 +21,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
+            - cache-{{ checksum "package.json" }}
       - run:
           name: Install Meteor
           command: |
