@@ -1,6 +1,6 @@
 version: 3.1
-orbs:
-  cypress: cypress-io/cypress@1.19.1
+#orbs:
+#  cypress: cypress-io/cypress@1.19.1
 paths:
   - cache/Cypress
 script:
@@ -26,7 +26,7 @@ jobs:
           name: Install Meteor
           command: |
             ls -a
-            if[ /.meteor]
+            if[ ~/project/.meteor]
               then 
                 echo "Cached Meteor bin found, restoring it"
                 sudo cp ~/.meteor/meteor 
