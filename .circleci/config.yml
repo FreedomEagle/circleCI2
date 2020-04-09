@@ -18,7 +18,6 @@ jobs:
     yarn: true
     install-command: yarn install --frozen-lockfile
     steps:
-            - cache-{{ checksum "package.json" }}
       - checkout
       - restore_cache:
           keys:

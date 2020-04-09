@@ -3,6 +3,7 @@
 End-to-end testing suite for Share911 service.  
 Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor app
 
+# Installation
 ## To run this repository on CircleCI
 - Clone the repository
 - Delete the exisiting .git folder
@@ -16,26 +17,27 @@ Installing and writing Cypress tests with Cucumber Gherkin Syntax for a Meteor a
 
 ## Cypress Installation
 
-### Git Clone the Repo 
-git clone <address>
-This already has cypress installed on it.   
-If you are building cypress onto your project, simply call command: npm install cypress
-### Install Dependencies
+### Git Clone this Repo 
+- Git clone https://github.com/FreedomEagle/circleCI2
+- This already has Cypress and NPM installed on it.   
+- If you are building cypress onto your project, simply call command: npm install cypress
+## Install Dependencies
 - npm install 
+## Run Cypress Tests Through any of These Modes.
+These modes are configurable in /e2e/cypress/config/ to suit your testing environment.
 
-# Run Tests Through any of These Modes.
+Perform these command within the cypress folder
+e2e/cypress
+  - npm run cypress:open:qa  
+  - npm run cypress:open:prod    
+  - npm run cypress:open:dev    
+  //runs headless  
+  - npm run test:prod    
+  - npm run test: 
 
-These modes are configurable in /e2e/cypress/config/
-
--npm run cypress:open:qa
--npm run cypress:open:prod  
--npm run cypress:open:dev  
--npm run test:prod  
--npm run test:local 
-
- Check package.json for more.  
-
-# Writing Tests
+Check package.json for more custom scripts.  
+https://docs.cypress.io/guides/getting-started/installing-cypress.html#Adding-npm-scripts
+# Writing Tests in Gherkin Syntax and Cypress Javascript 
 
 The tests are written in Gherkin Syntax first   
 We recommend writing concise statements that can be reused in other scenarios.  
