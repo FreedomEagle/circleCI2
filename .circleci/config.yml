@@ -26,6 +26,7 @@ jobs:
           name: Install Meteor
           command: |
             ls -a
+            pwd
             if[ ~/project/.meteor]
               then 
                 echo "Cached Meteor bin found, restoring it"
